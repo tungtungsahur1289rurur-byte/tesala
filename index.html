@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMP Indonesia Hub — Komunitas GTA San Andreas Multiplayer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FBBF24',
+                        secondary: '#1F2937',
+                        dark: '#111827',
+                        light: '#F9FAFB',
+                        accent: '#F59E0B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            .text-shadow-gold {
+                text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+            }
+            .card-glass {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .hero-gradient {
+                background: linear-gradient(to bottom, rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.95));
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-light font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center gap-2">
+                <i class="fa fa-car"></i>
+                <span>SAMP Hub</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#beranda" class="text-gray-300 hover:text-primary transition-colors">Beranda</a>
+                <a href="#tentang" class="text-gray-300 hover:text-primary transition-colors">Tentang SAMP</a>
+                <a href="#server" class="text-gray-300 hover:text-primary transition-colors">Server Populer</a>
+                <a href="#fitur" class="text-gray-300 hover:text-primary transition-colors">Fitur</a>
+                <a href="#kontak" class="text-gray-300 hover:text-primary transition-colors">Kontak</a>
+                <a href="#" class="bg-primary text-dark px-5 py-2 rounded-full font-semibold hover:bg-accent transition-all transform hover:scale-105">Mulai Bermain</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-light" id="menuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-secondary/95 backdrop-blur-lg" id="mobileMenu">
+            <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
+                <a href="#beranda" class="py-2 text-gray-300 hover:text-primary">Beranda</a>
+                <a href="#tentang" class="py-2 text-gray-300 hover:text-primary">Tentang SAMP</a>
+                <a href="#server" class="py-2 text-gray-300 hover:text-primary">Server Populer</a>
+                <a href="#fitur" class="py-2 text-gray-300 hover:text-primary">Fitur</a>
+                <a href="#kontak" class="py-2 text-gray-300 hover:text-primary">Kontak</a>
+                <a href="#" class="bg-primary text-dark px-5 py-2 rounded-full font-semibold text-center">Mulai Bermain</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1033/1920/1080" alt="GTA SAMP Background" class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 z-10 text-center">
+            <div class="animate-fade-in-up">
+                <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-tight mb-6">
+                    Selamat Datang di <br>
+                    <span class="text-primary text-shadow-gold">Dunia GTA SAMP</span>
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Komunitas terbesar GTA San Andreas Multiplayer di Indonesia. Temukan server terbaik, panduan lengkap, dan bergabunglah dengan ribuan pemain lainnya! 🚗💨
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#mulai" class="bg-primary text-dark px-8 py-3 rounded-full font-bold text-lg hover:bg-accent transition-all transform hover:scale-105 shadow-lg shadow-primary/20">
+                        <i class="fa fa-download mr-2"></i> Unduh SAMP
+                    </a>
+                    <a href="#server" class="bg-transparent border-2 border-light/30 text-light px-8 py-3 rounded-full font-bold text-lg hover:border-primary hover:text-primary transition-all">
+                        <i class="fa fa-globe mr-2"></i> Cari Server
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="card-glass rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <h3 class="text-3xl font-bold text-primary mb-2">500+</h3>
+                    <p class="text-gray-400">Server Aktif</p>
+                </div>
+                <div class="card-glass rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <h3 class="text-3xl font-bold text-primary mb-2">50K+</h3>
+                    <p class="text-gray-400">Pemain Harian</p>
+                </div>
+                <div class="card-glass rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <h3 class="text-3xl font-bold text-primary mb-2">10+</h3>
+                    <p class="text-gray-400">Tahun Berjalan</p>
+                </div>
+                <div class="card-glass rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <h3 class="text-3xl font-bold text-primary mb-2">100%</h3>
+                    <p class="text-gray-400">Gratis Dimainkan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang SAMP -->
+    <section id="tentang" class="py-24 bg-secondary/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Apa itu <span class="text-primary">GTA SAMP</span>?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Pelajari dasar-dasar GTA San Andreas Multiplayer dan mulailah petualanganmu bersama kami!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">GTA San Andreas Multiplayer</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        <strong>SAMP</strong> adalah singkatan dari <em>San Andreas Multiplayer</em>, sebuah modifikasi gratis yang memungkinkan kamu memainkan GTA San Andreas secara <strong>online bersama teman-teman dari seluruh dunia</strong>.
+                    </p>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Di sini kamu bisa menjadi apa saja: polisi, pengusaha, penjahat, dokter, mekanik, dan masih banyak lagi! Setiap server memiliki cerita, aturan, dan dunia sendiri yang unik.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-primary mt-1"></i>
+                            <span>Sepenuhnya gratis dan mudah dipasang</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-primary mt-1"></i>
+                            <span>Ribuan server dengan berbagai jenis permainan</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check-circle text-primary mt-1"></i>
+                            <span>Bisa dimainkan di komputer spesifikasi rendah</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-block bg-primary text-dark px-6 py-2 rounded-full font-semibold hover:bg-accent transition-all">
+                        Panduan Lengkap <i class="fa fa-arrow-right ml-1 text-sm"></i>
+                    </a>
+                </div>
+                <div class="order-1 md:order-2 relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+                        <img src="https://picsum.photos/id/1015/800/500" alt="GTA SAMP Gameplay" class="w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-primary text-dark p-4 rounded-xl font-bold shadow-lg">
+                        <i class="fa fa-gamepad mr-2 text-xl"></i> Bermain Bersama
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitur -->
+    <section id="fitur" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">Kenapa Memilih <span class="text-primary">SAMP?</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Pengalaman bermain yang tak tertandingi, masih populer hingga saat ini!</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-glass p-8 rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-colors">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Komunitas Besar</h3>
+                    <p class="text-gray-400 leading-relaxed">Bergabunglah dengan puluhan ribu pemain aktif setiap hari dari seluruh Indonesia dan dunia.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="card-glass p-8 rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-colors">
+                        <i class="fa fa-map"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Dunia Terbuka</h3>
+                    <p class="text-gray-400 leading-relaxed">Jelajahi kota Los Santos, San Fierro, dan Las Venturas bersama pemain lain dalam waktu nyata.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="card-glass p-8 rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-colors">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Banyak Pilihan Server</h3>
+                    <p class="text-gray-400 leading-relaxed">Mode roleplay, deathmatch, balapan, hingga server ekonomi — pilih sesuai seleramu!</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="card-glass p-8 rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-colors">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Ringan & Mudah</h3>
+                    <p class="text-gray-400 leading-relaxed">Tidak butuh komputer mahal! SAMP bisa berjalan lancar di laptop maupun PC standar.</p>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="card-glass p-8 rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-colors">
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Gratis Selamanya</h3>
+                    <p class="text-gray-400 leading-relaxed">Modifikasi ini 100% gratis. Cukup milik GTA San Andreas dan kamu siap untuk bermain!</p>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="card-glass p-8 rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-colors">
+                        <i class="fa fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Kustomisasi</h3>
+                    <p class
